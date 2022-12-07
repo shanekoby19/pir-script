@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hahmlet", sans-serif;
+        font-size: 1rem;
+        color: #14213d;
+      }
+
+      .link {
+        text-decoration: none;
+        font-size: 1em;
+        color: "#000";
+      }
+
+      .link:hover {
+        color: blue;
+        cursor: pointer;
+      }
+
+      .good {
+        color: green;
+      }
+
+      .bad {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+     <div>
+        <h2>Hello <?= data.advocateFirstName ?>,</h2>
+
+        <p>This audit will be a bit different from our last audit as you will not provide a unique explanation for each metric. Instead you will only verify that the information is correct in Shine.</p>
+          <p>Simply click the link, check to ensure the information is up to date in Shine then select "completed" from the dropdown on your google sheet. If you need any clarification please reach out to Shane or your coordinator.</p>
+
+        <h2>
+          <ul>
+            <li>Immunizations – update from current record in WebIZ</li>
+            <li>New Children Enrolled at Least 75 Days Without Medical and/or Dental Status Determination - information from physical or dental form.</li>
+            <li>Enrolled With No Medical Home - information from either Health History (if blank on HH, enter No at Enrollment) or Physical form</li>
+            <li>Enrolled With No Dental Home - information from either Health History (if blank on HH, enter No at Enrollment)  or Dental form</li>
+            <li>No or Blank Preventive Dental – Change to Yes if Dental Exam completed within past year</li>
+            <li>Enrolled With No Health Insurance - information from Health History (if blank on HH, enter No at Enrollment) or Health Information Planning History note – call parent for insurance update if no insurance indicated and child/family are US citizens – if not citizens, document not eligible but resources provided to family </li>
+          </ul>
+        </h2>
+
+        <h3>As of today, you have entered <?= data.completedExplanations ?> explanations of the <?= data.explanationCount ?> records that are needing exlanation for your caseload. This gives you a completion percentage of 
+            <span class=<?= data.className ?>> <?= data.completionPercentage ?>%</span>.</h3>
+        <h3>We will be moving to our next section of clean-up on May 1st. Anything that isn't finished by that date, will carry over to your end-of-year clean-up.</h3>
+        <h3> Here is a link to your <a class="link" href=<?= data.url ?>>PIR Audit clean-up for the week.</a></h3>
+    </div>
+  </body>
+</html>
